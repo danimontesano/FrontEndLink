@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'TpLink'`, () => {
+  it(`should have as title 'FrontEndLink'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('TpLink');
+    expect(app.title).toEqual('FrontEndLink');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('TpLink app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('FrontEndLink app is running!');
   });
 });
