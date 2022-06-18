@@ -7,6 +7,12 @@ body {
   min-height: 100vh !important;
 }
 
+app-root {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
 
 footer {
   padding-top: 3rem !important;
