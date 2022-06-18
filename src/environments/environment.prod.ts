@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  urlLogIn: '/api/usuarios/search/findByNombreDeUsuarioAndContrasenia?'
 };
