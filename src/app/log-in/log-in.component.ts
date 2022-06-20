@@ -1,3 +1,4 @@
+import { UserServiceService } from './../main-service/user-service/user-service.service';
 import { LoggearService } from './services/loggear.service';
 
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,8 @@ export class LogInComponent implements OnInit {
 
   constructor(
     private loggearService: LoggearService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserServiceService
   ) {
     this.formulario = null;
   }
@@ -31,14 +33,23 @@ export class LogInComponent implements OnInit {
   }
 
   loggear(){
+    console.log(this.formulario?.controls["nombreDeUsuario"].status);
+
     var nombreDeUsuario = this.formulario?.get("nombreDeUsuario")?.value;
     var contrasenia = this.formulario?.get("contrasenia")?.value;
 
     this.loggearService.buscarUsuario(nombreDeUsuario, contrasenia).subscribe((usuario: any) => {
-      localStorage.setItem("id", usuario.id);
-      localStorage.setItem("nombre", usuario.nombre);
-      localStorage.setItem("apellido", usuario.apellido);
+      //localStorage.setItem("id", usuario.id);
+      //localStorage.setItem("nombre", usuario.nombre);
+      //localStorage.setItem("apellido", usuario.apellido);
+      this.userService.settearUser(usuario);
       console.log(usuario.id);
+    }, (error) => {
+      //localStorage.removeItem("id");
+      //localStorage.removeItem("nombre");
+      //localStorage.removeItem("apellido");
+      this.userService.settearUser(null);
+      alert('Nombre de usuario o contraseña incorrectas');
     })
   }
 
