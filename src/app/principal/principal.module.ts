@@ -5,13 +5,15 @@ import { PrincipalRoutingModule } from './principal-routing.module';
 import { PrincipalComponent } from './principal.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProductoComponent } from './producto/producto.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 
 @NgModule({
   declarations: [
     PrincipalComponent,
     InicioComponent,
-    ProductoComponent
+    ProductoComponent,
+    CarritoComponent
   ],
   imports: [
     CommonModule,

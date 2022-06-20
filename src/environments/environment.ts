@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   urlLogIn: '/api/usuarios/search/findByNombreDeUsuarioAndContrasenia?',
-  urlProducto: '/api/productos/'
+  urlProducto: '/api/Productos/'
 };
 
 /*

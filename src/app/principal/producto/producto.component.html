@@ -3,25 +3,25 @@
   <div class="row justify-content-center" style="font-family: sans-serif;">
     <div class="col-xxl-11 col rounded-2 bg-white shadow-producto">
       <div class="row ">
-        <div class="col-8 border py-5" style="border-top-left-radius: 0.25rem !important;">
-          <img src="https://acf.geeknetic.es/imgw/imagenes/Tutoriales/2020/1879-GeForce-RTX-3080-Founders-Edition/1879-GeForce-RTX-3080-Founders-Edition-8.jpg?f=webp" class="card-img-top" alt="..." style="padding-top: 10px; padding-bottom: 10px;">
+        <div class="col-8 border py-5" style="border-top-left-radius: 0.25rem !important; text-align: center;">
+          <img src="{{producto?.imagen}}" class="card-img-top imagen-producto" alt="...">
         </div>
         <div class="col-4 border py-5 flex-column" style="border-top-right-radius: 0.25rem !important;">
           <h3>{{producto?.nombre}}</h3>
           <br>
-          <h2>U$D10 ≈ $2050</h2>
+          <h2>U$D{{producto?.precioDolar}} ≈ ${{producto?.precioPesos}}</h2>
           <br>
-          <h5 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h5>
+          <h5 class="text-justify text-secondary">Vendedor: {{producto?.vendedor.razonSocial}}</h5>
           <br>
           <div class="d-grid gap-2 mb-2 mt-auto">
-            <button type="button" class="btn gradient-button">Comprar</button>
+            <button type="button" (click)="comprar()" class="btn gradient-button">Comprar</button>
           </div>
           <div class="d-grid gap-2 mb-2">
             <button type="button" class="btn gradient-button">Añadir al carrito</button>
           </div>
         </div>
         <div class="col-12 rounded-bottom border py-5">
-          <h5 style="width: 90%;"class="text-justify mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+          <h5 style="width: 90%;"class="text-justify mx-auto">{{producto?.descripcion}}</h5>
         </div>
       </div>
     </div>

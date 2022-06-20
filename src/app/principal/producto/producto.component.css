@@ -1,0 +1,47 @@
+.imagen-producto {
+  max-height: 200px;
+  height: auto;
+  width: auto;
+  max-width: 350px;
+  margin: auto;
+}
+
+@media (min-width: 575.98px){
+  .imagen-producto {
+    max-height: 300px;
+    height: auto;
+    width: auto;
+    max-width: 400px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 767.98px){
+  .imagen-producto {
+    max-height: 350px;
+    height: auto;
+    width: auto;
+    max-width: 500px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 991.98px){
+  .imagen-producto {
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1199.98px){
+  .imagen-producto {
+    max-height: 500px;
+    height: auto;
+    width: auto;
+    max-width: 800px;
+    margin: auto;
+  }
+}

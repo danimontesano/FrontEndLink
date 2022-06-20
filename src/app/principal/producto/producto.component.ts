@@ -1,6 +1,7 @@
+import { UserServiceService } from './../../main-service/user-service/user-service.service';
 import { ProductosService } from './../../main-service/product-service/productos.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   templateUrl: './producto.component.html',
@@ -13,7 +14,9 @@ export class ProductoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productosService: ProductosService
+    private productosService: ProductosService,
+    private userService: UserServiceService,
+    private router: Router
   ) {
     this.productoId = NaN;
   }
@@ -40,6 +43,15 @@ export class ProductoComponent implements OnInit {
         //Mostrar pantalla de error 404
       }
     })
+  }
+
+  comprar(){
+    var usuario: any = this.userService.obtenerUsuario();
+    if(this.userService.obtenerUsuario() == null){
+      this.router.navigate(['/', 'log-in'])
+    }else{
+      this.router.navigate(['/', 'carrito'])
+    }
   }
 
 }
